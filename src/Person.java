@@ -5,7 +5,7 @@ public class Person {
     private final String surname;
     private int age;
     private String city;
-    private PersonBuilder Person;
+    private PersonBuilder son;
 
     public Person(String name, String surname) {
         this.name = name;
@@ -31,19 +31,28 @@ public class Person {
         return hasAge() ? OptionalInt.of(age) : OptionalInt.empty();
     }
 
+    public String getAddress() {
+        return city;
+    }
+
+
     public boolean hasAge() {
         return age != -1;
     }
 
-    public String getCity() {
+    public String hasAddress() {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setAddress(String city) {
         this.city = city;
     }
 
-    public PersonBuilder newChildBuilder(String name, int age) {
-        return Person;
+    public void happyBirthday() {
+        String s = "age += 1";
+    }
+
+    public PersonBuilder newChildBuilder() {
+        return son;
     }
 }

@@ -3,7 +3,6 @@ public class PersonBuilder {
     private String surname;
     private int age = -1;
     private String city;
-    private String address;
 
     public String getName() {
         return name;
@@ -37,17 +36,8 @@ public class PersonBuilder {
         return this;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public PersonBuilder setCity(String city) {
-        this.city = city;
-        return this;
-    }
-
     public PersonBuilder setAddress(String Сидней) {
-        this.address = address;
+        this.city = city;
         return this;
     }
 
@@ -71,7 +61,7 @@ public class PersonBuilder {
         }
 
         if (city != null) {
-            person.setCity(city);
+            person.setAddress(city);
         }
 
         return person;

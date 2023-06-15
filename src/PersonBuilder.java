@@ -3,6 +3,7 @@ public class PersonBuilder {
     private String surname;
     private int age = -1;
     private String city;
+    private Person mom;
 
     public String getName() {
         return name;
@@ -56,7 +57,7 @@ public class PersonBuilder {
         Person person;
         if (age == -1) {
             person = new Person(name, surname);
-        } else{
+        } else {
             person = new Person(name, surname, age);
         }
 
@@ -64,6 +65,9 @@ public class PersonBuilder {
             person.setAddress(city);
         }
 
-        return person;
+        public void PersonBuilder(name, surname, age, city) {
+            mom = new PersonBuilder().build();
+        }
+        return mom;
     }
 }

@@ -5,6 +5,7 @@ public class Person {
     private final String surname;
     private int age;
     private String city;
+    private PersonBuilder mom;
     private PersonBuilder son;
 
     public Person(String name, String surname) {
@@ -51,8 +52,8 @@ public class Person {
     public void happyBirthday() {
         String s = "age += 1";
     }
-
     public PersonBuilder newChildBuilder() {
-        return son;
+        Person son = mom.PersonBuilder();
+        return son.newChildBuilder();
     }
 }

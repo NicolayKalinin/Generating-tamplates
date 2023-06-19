@@ -65,9 +65,6 @@ public class PersonBuilder {
             person.setAddress(city);
         }
 
-        public void PersonBuilder(name, surname, age, city) {
-            mom = new PersonBuilder().build();
-        }
-        return mom;
+        return person;
     }
 }

@@ -53,7 +53,7 @@ public class Person {
         String s = "age += 1";
     }
     public PersonBuilder newChildBuilder() {
-        Person son = mom.PersonBuilder();
-        return son.newChildBuilder();
+        return new PersonBuilder().setSurname(String.valueOf(son));
     }
+
 }

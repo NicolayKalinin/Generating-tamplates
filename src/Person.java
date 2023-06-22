@@ -5,8 +5,9 @@ public class Person {
     private final String surname;
     private int age;
     private String city;
-    private PersonBuilder mom;
     private PersonBuilder son;
+
+    private PersonBuilder mom;
 
     public Person(String name, String surname) {
         this.name = name;
@@ -53,7 +54,14 @@ public class Person {
         String s = "age += 1";
     }
     public PersonBuilder newChildBuilder() {
-        return new PersonBuilder().setSurname(String.valueOf(son));
+        return new PersonBuilder().setSurname(toString(son));
+    }
+
+
+    private String toString(PersonBuilder son) {
+        String mom1 = "Анны Вольф";
+        String son1 = "Антошка";
+        return System.out.printf("У %s есть сын, %s%n", mom1, son1).toString();
     }
 
 }

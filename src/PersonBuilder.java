@@ -1,5 +1,5 @@
 public class PersonBuilder {
-    private String name;
+    public String name;
     private String surname;
     private int age = -1;
     private String city;
@@ -55,16 +55,18 @@ public class PersonBuilder {
         }
 
         Person person;
-        if (age == -1) {
-            person = new Person(name, surname);
-        } else {
-            person = new Person(name, surname, age);
-        }
+        person = new Person(name, surname, age);
 
         if (city != null) {
             person.setAddress(city);
         }
 
         return person;
+    }
+
+    public static class setSurname extends PersonBuilder {
+        public setSurname(String s) {
+            super();
+        }
     }
 }

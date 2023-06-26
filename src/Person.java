@@ -14,7 +14,7 @@ public class Person {
         this.age = -1;
     }
 
-    public String getName() {
+    public String getName(PersonBuilder mom, PersonBuilder son) {
         return name;
     }
 
@@ -49,10 +49,17 @@ public class Person {
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder.setSurname(toString(son));
     }
-
-
-    private String toString(PersonBuilder son) {
-        return System.out.printf("У %s есть сын, %s%n", mom, son).toString();
+    private String getName(PersonBuilder son) {
+        return name;
+    }
+    public void setSon(PersonBuilder son) {
+        this.son = son;
     }
 
+    public void setMom(PersonBuilder mom) {
+        this.mom = mom;
+    }
+    private String toString(PersonBuilder son) {
+        return System.out.printf("У %s есть сын, %s%n", getName(mom), getName(son)).toString();
+    }
 }

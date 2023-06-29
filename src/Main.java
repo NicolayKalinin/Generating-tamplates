@@ -6,10 +6,12 @@ public class Main {
                 .setAge(31)
                 .setAddress("Сидней")
                 .build();
-        Person son = mom.newChildBuilder()
+        PersonBuilder PersonBuilder = new PersonBuilder();
+        Person son = mom.newChildBuilder(PersonBuilder)
                 .setName("Антошка")
                 .setSurname("Вольф")
                 .build();
+        System.out.println("У " + (toString(mom)) + " есть сын, " + (toString(son)));
 
         try {
             new PersonBuilder().setName("Анна").setSurname("Вольф").setAge(31).build();
@@ -18,9 +20,13 @@ public class Main {
         }
 
         try {
-            new PersonBuilder().setName("Антошка").setSurname("Вольф").setAge(20).build();
+            new PersonBuilder().setName("Антошка").setSurname("Вольф").setAge(0).build();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
+    }
+
+    private static String toString(Person mom) {
+        return mom.getName();
     }
 }
